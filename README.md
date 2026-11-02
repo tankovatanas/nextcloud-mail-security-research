@@ -21,6 +21,19 @@ This research systematically examines the [**Nextcloud Mail implementation (`v6.
 
 ---
 
+## Architectural Diagrams & Visualizations
+All diagrams are provided in standalone, uncompressed SVG vector format with uniform Times New Roman typography:
+| Figure | Diagram Title & File Link | Description & Attack Context |
+| :---: | :--- | :--- |
+| **Figure 1** | [**`architecture.svg`**](./architecture.svg) | **System Architecture & Attack Surface Boundaries**<br>Decomposes client controllers, domain services, QBMappers, and external protocol bridges across untrusted boundaries. |
+| **Figure 2** | [**`managesieve.svg`**](./managesieve.svg) | **ManageSieve Host Hijacking & Credential Exfiltration (VULN-01)**<br>Execution trace showing fallback credential extraction and plain IMAP / master password capture on rogue listeners. |
+| **Figure 3** | [**`crossaccount.svg`**](./crossaccount.svg) | **Cross-Account Attachment Hijacking (VULN-02)**<br>Sequence diagram showing unauthorized rebinding of private draft attachments across delegated accounts. |
+| **Figure 4** | [**`sievefilter.svg`**](./sievefilter.svg) | **Sieve Filter Compilation & CRLF Breakout State Machine (VULN-03)**<br>UML state machine contrasting vulnerable `# ` comment breakout with hardened AST validation and allowlisting. |
+| **Figure 5** | [**`csshtml.svg`**](./csshtml.svg) | **Dual-Stage CSS & HTML Sanitization Pipeline (VULN-04 & VULN-05)**<br>Contrasts flawed case-sensitive regex matching with tokenized AST proxy rewriting. |
+| **Figure 6** | [**`dkim_alignment.svg`**](./dkim_alignment.svg) | **Decoupled Evaluation vs. Strict Domain Alignment (VULN-06)**<br>Illustrates how decoupled DKIM verification enables domain spoofing versus strict RFC 7489 alignment. |
+| **Figure 7** | [**`formalentity.svg`**](./formalentity.svg) | **Relational Entity Model & SASI Boundaries**<br>Database entity relationships and ownership scoping enforcing the Strict Account Scoping Invariant. |
+---
+
 ## Discovered Vulnerability Summary
 
 | ID | Title | CVSS v3.1 | Severity | CWE | Primary Attack Impact |
@@ -45,6 +58,21 @@ This research systematically examines the [**Nextcloud Mail implementation (`v6.
 4. **Grammar-Constrained AST Compilation**: Replaces regex-based filters with AST transformations for both RFC 5228 Sieve script compilation and CSS URL tokenization.
 5. **DKIM Alignment Enforcement**: Restructures DKIM validation to enforce strict domain alignment between the cryptographic signing identity (`d=`) and the envelope `From:` header per RFC 7489 (DMARC).
 
+---
+
+## Repository Structure
+```text
+.
+├── Nextcloud_Mail_Security_Research_Paper.pdf  # Formal academic paper (7 pages, Times New Roman)
+├── architecture.svg                           # Figure 1: System Architecture & Boundaries
+├── managesieve.svg                            # Figure 2: ManageSieve Host Hijacking Trace
+├── crossaccount.svg                           # Figure 3: Cross-Account Attachment Hijacking Trace
+├── sievefilter.svg                            # Figure 4: Sieve Filter State Machine
+├── csshtml.svg                                # Figure 5: CSS & HTML Sanitization Pipeline
+├── dkim_alignment.svg                         # Figure 6: DKIM Verification & Alignment Flow
+├── formalentity.svg                           # Figure 7: Relational Entity Model & SASI
+└── README.md                                  # Repository overview and diagram navigation
+```
 ---
 
 ## BibTeX Citation
