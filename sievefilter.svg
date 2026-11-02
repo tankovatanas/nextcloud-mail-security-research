@@ -1,0 +1,217 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1060 435" width="1060" height="435" style="background:#FFFFFF; font-family:'Times New Roman', Times, serif;">
+  <defs>
+    <marker id="state-arrow" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto">
+      <polygon points="0 0, 7 2.5, 0 5" fill="#334155" />
+    </marker>
+    <marker id="state-arrow-red" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto">
+      <polygon points="0 0, 7 2.5, 0 5" fill="#B91C1C" />
+    </marker>
+    <marker id="state-arrow-green" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto">
+      <polygon points="0 0, 7 2.5, 0 5" fill="#15803D" />
+    </marker>
+    <filter id="shadow" x="-2%" y="-2%" width="104%" height="106%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="1" stdDeviation="1.5" flood-color="#000000" flood-opacity="0.06"/>
+    </filter>
+  </defs>
+
+  <style>
+    text, tspan { font-family: 'Times New Roman', Times, serif !important; }
+    .state-title { font-weight: bold; font-size: 11px; fill: #0F172A; }
+    .state-sub { font-size: 9.5px; fill: #334155; }
+    .trans-label { font-size: 9px; fill: #475569; font-style: italic; }
+    .code-text { font-family: 'Times New Roman', Times, serif; font-size: 9.5px; fill: #0F172A; }
+  </style>
+
+  <!-- Top Title Banner -->
+  <rect x="20" y="10" width="1020" height="32" fill="#F8FAFC" stroke="#94A3B8" stroke-width="1" rx="4"/>
+  <text x="530" y="31" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#0F172A">
+    State Diagram: RFC 5228 Sieve Script Compilation &amp; CRLF Breakout (VULN-03)
+  </text>
+
+  <!-- ==================== COLUMN 1: INGESTION & EXTRACTION ==================== -->
+  
+  <!-- Initial State [*] -->
+  <circle cx="45" cy="85" r="8" fill="#1E293B"/>
+  <line x1="53" y1="85" x2="80" y2="85" stroke="#334155" stroke-width="1.5" marker-end="url(#state-arrow)"/>
+  <text x="66" y="76" text-anchor="middle" class="trans-label">HTTP</text>
+
+  <!-- InboundPayload State -->
+  <rect x="80" y="65" width="165" height="40" fill="#FFFFFF" stroke="#475569" stroke-width="1.5" rx="6" filter="url(#shadow)"/>
+  <text x="162" y="82" text-anchor="middle" class="state-title">InboundPayload</text>
+  <text x="162" y="96" text-anchor="middle" class="state-sub">/api/accounts/{id}/filters</text>
+
+  <!-- Transition to FilterExtraction -->
+  <line x1="162" y1="105" x2="162" y2="135" stroke="#334155" stroke-width="1.5" marker-end="url(#state-arrow)"/>
+  <text x="168" y="123" class="trans-label">JSON array</text>
+
+  <!-- Composite State: FilterExtraction -->
+  <rect x="20" y="135" width="225" height="280" fill="#F8FAFC" stroke="#64748B" stroke-width="1.5" rx="6" stroke-dasharray="4,2"/>
+  <rect x="20" y="135" width="225" height="24" fill="#E2E8F0" stroke="#64748B" stroke-width="1.5" rx="6"/>
+  <text x="132" y="151" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#1E293B">Composite State: FilterExtraction</text>
+
+  <!-- Substate 1: CheckEnabled -->
+  <rect x="35" y="172" width="195" height="46" fill="#FFFFFF" stroke="#64748B" stroke-width="1.2" rx="4" filter="url(#shadow)"/>
+  <text x="132" y="190" text-anchor="middle" class="state-title">CheckEnabled</text>
+  <text x="132" y="206" text-anchor="middle" class="state-sub">Assert $filter['enabled'] === true</text>
+
+  <line x1="132" y1="218" x2="132" y2="242" stroke="#334155" stroke-width="1.2" marker-end="url(#state-arrow)"/>
+  <text x="136" y="233" class="trans-label">enabled</text>
+
+  <!-- Substate 2: ReadMetadata -->
+  <rect x="35" y="242" width="195" height="46" fill="#FFFFFF" stroke="#64748B" stroke-width="1.2" rx="4" filter="url(#shadow)"/>
+  <text x="132" y="260" text-anchor="middle" class="state-title">ReadMetadata</text>
+  <text x="132" y="276" text-anchor="middle" class="state-sub">Extract $name, $operator, $tests</text>
+
+  <line x1="132" y1="288" x2="132" y2="312" stroke="#334155" stroke-width="1.2" marker-end="url(#state-arrow)"/>
+  <text x="136" y="303" class="trans-label">lex tokens</text>
+
+  <!-- Substate 3: InspectTokens -->
+  <rect x="35" y="312" width="195" height="85" fill="#FFFFFF" stroke="#64748B" stroke-width="1.2" rx="4" filter="url(#shadow)"/>
+  <text x="132" y="330" text-anchor="middle" class="state-title">InspectTokens</text>
+  <text x="45" y="348" class="state-sub">• name: "Rule
+redirect..."</text>
+  <text x="45" y="364" class="state-sub">• operator: unvalidated string</text>
+  <text x="45" y="380" class="state-sub">• tests: header match array</text>
+
+
+  <!-- ==================== COLUMN 2: TWO COMPILATION PIPELINES ==================== -->
+
+  <!-- Fork Transitions from Column 1 -->
+  <!-- To Vulnerable State -->
+  <path d="M 230 260 L 255 260 L 255 145 L 280 145" fill="none" stroke="#B91C1C" stroke-width="1.8" marker-end="url(#state-arrow-red)"/>
+  <text x="268" y="195" text-anchor="middle" font-size="8.5" font-weight="bold" fill="#B91C1C" transform="rotate(-90, 268, 195)">Unsanitized</text>
+
+  <!-- To Hardened State -->
+  <path d="M 230 275 L 255 275 L 255 330 L 280 330" fill="none" stroke="#15803D" stroke-width="1.8" marker-end="url(#state-arrow-green)"/>
+  <text x="268" y="310" text-anchor="middle" font-size="8.5" font-weight="bold" fill="#15803D" transform="rotate(90, 268, 310)">Hardened</text>
+
+  <!-- ================= UPPER: VULNERABLE STATE MACHINE ================= -->
+  <rect x="280" y="55" width="415" height="175" fill="#FEF2F2" stroke="#EF4444" stroke-width="1.5" rx="6"/>
+  <rect x="280" y="55" width="415" height="24" fill="#FEE2E2" stroke="#EF4444" stroke-width="1.5" rx="6"/>
+  <text x="487" y="71" text-anchor="middle" font-size="11" font-weight="bold" fill="#991B1B">
+    Vulnerable Pipeline: Flawed FilterBuilder.php (VULN-03)
+  </text>
+
+  <!-- Substate 1: RawComment -->
+  <rect x="295" y="90" width="175" height="50" fill="#FFFFFF" stroke="#DC2626" stroke-width="1.2" rx="4" filter="url(#shadow)"/>
+  <text x="382" y="108" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#991B1B">RawComment State</text>
+  <text x="382" y="122" text-anchor="middle" class="state-sub">$commands[] = '# ' . $name</text>
+  <text x="382" y="134" text-anchor="middle" font-size="8.5" fill="#DC2626">No CR/LF character filtering</text>
+
+  <line x1="470" y1="115" x2="505" y2="115" stroke="#B91C1C" stroke-width="1.5" marker-end="url(#state-arrow-red)"/>
+  <text x="487" y="106" text-anchor="middle" font-size="8" fill="#991B1B">CRLF in $name</text>
+
+  <!-- Substate 2: CRLFBreakout -->
+  <rect x="505" y="90" width="175" height="50" fill="#FFFFFF" stroke="#DC2626" stroke-width="1.2" rx="4" filter="url(#shadow)"/>
+  <text x="592" y="108" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#991B1B">CRLFBreakout State</text>
+  <text x="592" y="122" text-anchor="middle" class="state-sub">Line feed terminates '# '</text>
+  <text x="592" y="134" text-anchor="middle" font-size="8.5" fill="#DC2626">Comment scope abandoned</text>
+
+  <line x1="592" y1="140" x2="592" y2="162" stroke="#B91C1C" stroke-width="1.5" marker-end="url(#state-arrow-red)"/>
+  <text x="600" y="153" font-size="8.5" fill="#991B1B">Lexer newline</text>
+
+  <!-- Substate 3: CommandInjection -->
+  <rect x="295" y="162" width="175" height="52" fill="#FFFFFF" stroke="#DC2626" stroke-width="1.2" rx="4" filter="url(#shadow)"/>
+  <text x="382" y="180" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#991B1B">CommandInjection</text>
+  <text x="382" y="195" text-anchor="middle" font-size="9" font-weight="bold" fill="#B91C1C">redirect :copy "exfil@..."</text>
+  <text x="382" y="206" text-anchor="middle" font-size="8.5" fill="#475569">Parsed as executable Sieve action</text>
+
+  <line x1="505" y1="188" x2="470" y2="188" stroke="#B91C1C" stroke-width="1.5" marker-end="url(#state-arrow-red)"/>
+
+  <!-- Substate 4: OperatorSmuggling -->
+  <rect x="505" y="162" width="175" height="52" fill="#FFFFFF" stroke="#DC2626" stroke-width="1.2" rx="4" filter="url(#shadow)"/>
+  <text x="592" y="180" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#991B1B">OperatorSmuggling</text>
+  <text x="592" y="195" text-anchor="middle" class="state-sub">sprintf('header :%s', $op)</text>
+  <text x="592" y="206" text-anchor="middle" font-size="8.5" fill="#DC2626">Unchecked grammar modifier</text>
+
+  <!-- ================= LOWER: HARDENED STATE MACHINE ================= -->
+  <rect x="280" y="240" width="415" height="175" fill="#F0FDF4" stroke="#22C55E" stroke-width="1.5" rx="6"/>
+  <rect x="280" y="240" width="415" height="24" fill="#DCFCE7" stroke="#22C55E" stroke-width="1.5" rx="6"/>
+  <text x="487" y="256" text-anchor="middle" font-size="11" font-weight="bold" fill="#166534">
+    Hardened Pipeline: Grammar-Constrained Defense Architecture
+  </text>
+
+  <!-- Substate 1: StripControlChars -->
+  <rect x="295" y="272" width="385" height="38" fill="#FFFFFF" stroke="#16A34A" stroke-width="1.2" rx="4" filter="url(#shadow)"/>
+  <text x="487" y="287" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#166534">StripControlChars State</text>
+  <text x="487" y="301" text-anchor="middle" class="code-text">preg_replace('/[\r\n\0]+/', ' ', $name) &#x2192; CR/LF neutralized</text>
+
+  <line x1="487" y1="310" x2="487" y2="324" stroke="#15803D" stroke-width="1.5" marker-end="url(#state-arrow-green)"/>
+  <text x="492" y="319" class="trans-label">clean string</text>
+
+  <!-- Substate 2: OperatorAllowlist -->
+  <rect x="295" y="324" width="385" height="38" fill="#FFFFFF" stroke="#16A34A" stroke-width="1.2" rx="4" filter="url(#shadow)"/>
+  <text x="487" y="339" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#166534">OperatorAllowlist State</text>
+  <text x="487" y="353" text-anchor="middle" class="state-sub">Assert $test['operator'] &#x2208; ['is', 'contains', 'matches']</text>
+
+  <line x1="487" y1="362" x2="487" y2="376" stroke="#15803D" stroke-width="1.5" marker-end="url(#state-arrow-green)"/>
+  <text x="492" y="371" class="trans-label">valid operator</text>
+
+  <!-- Substate 3: BoundedScriptEmit -->
+  <rect x="295" y="376" width="385" height="32" fill="#FFFFFF" stroke="#16A34A" stroke-width="1.2" rx="4" filter="url(#shadow)"/>
+  <text x="487" y="391" text-anchor="middle" font-size="10" font-weight="bold" fill="#166534">BoundedScriptEmit State</text>
+  <text x="487" y="402" text-anchor="middle" class="state-sub">Emits strictly single-line comment; valid RFC 5228 AST node</text>
+
+
+  <!-- ==================== COLUMN 3: SERVER DAEMON & OUTCOMES ==================== -->
+
+  <!-- Composite State: ServerDaemon -->
+  <rect x="735" y="55" width="305" height="360" fill="#F8FAFC" stroke="#64748B" stroke-width="1.5" rx="6"/>
+  <rect x="735" y="55" width="305" height="24" fill="#E2E8F0" stroke="#64748B" stroke-width="1.5" rx="6"/>
+  <text x="887" y="71" text-anchor="middle" font-size="11" font-weight="bold" fill="#1E293B">ManageSieve Server (Dovecot / Pigeonhole)</text>
+
+  <!-- Transitions into ServerDaemon -->
+  <path d="M 670 188 L 755 188 L 755 125 L 775 125" fill="none" stroke="#B91C1C" stroke-width="1.5" marker-end="url(#state-arrow-red)"/>
+  <text x="710" y="160" text-anchor="middle" font-size="8.5" fill="#B91C1C">Injected script</text>
+
+  <path d="M 680 392 L 755 392 L 755 135 L 775 135" fill="none" stroke="#15803D" stroke-width="1.5" marker-end="url(#state-arrow-green)"/>
+  <text x="710" y="360" text-anchor="middle" font-size="8.5" fill="#15803D">Verified script</text>
+
+  <!-- State 1: UploadScript -->
+  <rect x="775" y="110" width="245" height="42" fill="#FFFFFF" stroke="#475569" stroke-width="1.2" rx="4" filter="url(#shadow)"/>
+  <text x="897" y="127" text-anchor="middle" class="state-title">UploadScript State</text>
+  <text x="897" y="142" text-anchor="middle" class="state-sub">SieveService::updateActiveScript()</text>
+
+  <line x1="897" y1="152" x2="897" y2="175" stroke="#334155" stroke-width="1.2" marker-end="url(#state-arrow)"/>
+  <text x="902" y="166" class="trans-label">PUTSCRIPT</text>
+
+  <!-- State 2: CompileBytecode -->
+  <rect x="775" y="175" width="245" height="42" fill="#FFFFFF" stroke="#475569" stroke-width="1.2" rx="4" filter="url(#shadow)"/>
+  <text x="897" y="192" text-anchor="middle" class="state-title">CompileBytecode State</text>
+  <text x="897" y="207" text-anchor="middle" class="state-sub">Dovecot compiler compiles Sieve bytecode</text>
+
+  <line x1="897" y1="217" x2="897" y2="240" stroke="#334155" stroke-width="1.2" marker-end="url(#state-arrow)"/>
+  <text x="902" y="231" class="trans-label">SETACTIVE</text>
+
+  <!-- State 3: ExecuteRules -->
+  <rect x="775" y="240" width="245" height="42" fill="#FFFFFF" stroke="#475569" stroke-width="1.2" rx="4" filter="url(#shadow)"/>
+  <text x="897" y="257" text-anchor="middle" class="state-title">ExecuteRules State</text>
+  <text x="897" y="272" text-anchor="middle" class="state-sub">Inbound message triggers Sieve bytecode</text>
+
+  <!-- Branch to Outcomes -->
+  <line x1="840" y1="282" x2="840" y2="305" stroke="#B91C1C" stroke-width="1.5" marker-end="url(#state-arrow-red)"/>
+  <line x1="955" y1="282" x2="955" y2="305" stroke="#15803D" stroke-width="1.5" marker-end="url(#state-arrow-green)"/>
+
+  <!-- Outcome 1: UnauthorizedExfiltration -->
+  <rect x="750" y="305" width="135" height="60" fill="#FFF1F2" stroke="#E11D48" stroke-width="1.2" rx="4"/>
+  <text x="817" y="322" text-anchor="middle" font-size="9.5" font-weight="bold" fill="#9F1239">Exfiltration State</text>
+  <text x="817" y="337" text-anchor="middle" font-size="8.5" fill="#881337">redirect :copy executed</text>
+  <text x="817" y="350" text-anchor="middle" font-size="8" fill="#9F1239">Silent data exfiltration</text>
+
+  <!-- Terminal State 1 [*] -->
+  <circle cx="817" cy="390" r="9" fill="none" stroke="#B91C1C" stroke-width="1.5"/>
+  <circle cx="817" cy="390" r="5" fill="#B91C1C"/>
+  <line x1="817" y1="365" x2="817" y2="381" stroke="#B91C1C" stroke-width="1.2"/>
+
+  <!-- Outcome 2: SecureDelivery -->
+  <rect x="895" y="305" width="135" height="60" fill="#F0FDF4" stroke="#16A34A" stroke-width="1.2" rx="4"/>
+  <text x="962" y="322" text-anchor="middle" font-size="9.5" font-weight="bold" fill="#166534">SecureDelivery</text>
+  <text x="962" y="337" text-anchor="middle" font-size="8.5" fill="#14532D">Strict rule execution</text>
+  <text x="962" y="350" text-anchor="middle" font-size="8" fill="#166534">Zero injected commands</text>
+
+  <!-- Terminal State 2 [*] -->
+  <circle cx="962" cy="390" r="9" fill="none" stroke="#15803D" stroke-width="1.5"/>
+  <circle cx="962" cy="390" r="5" fill="#15803D"/>
+  <line x1="962" y1="365" x2="962" y2="381" stroke="#15803D" stroke-width="1.2"/>
+
+</svg>

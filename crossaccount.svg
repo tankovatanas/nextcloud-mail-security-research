@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1663.2484999999995 492.45" width="1663.2484999999995" height="492.45" style="--bg:#FFFFFF;--fg:#1E293B;--line:#64748B;--muted:#475569;--surface:#F8FAFC;--border:#CBD5E1;background:var(--bg)">
+<style>
+  text, tspan, .mono { font-family: 'Times New Roman', Times, serif, Times, serif !important; }
+  svg {
+    /* Derived from --bg and --fg (overridable via --line, --accent, etc.) */
+    --_text:          var(--fg);
+    --_text-sec:      var(--muted, color-mix(in srgb, var(--fg) 60%, var(--bg)));
+    --_text-muted:    var(--muted, color-mix(in srgb, var(--fg) 40%, var(--bg)));
+    --_text-faint:    color-mix(in srgb, var(--fg) 25%, var(--bg));
+    --_line:          var(--line, color-mix(in srgb, var(--fg) 50%, var(--bg)));
+    --_arrow:         var(--accent, color-mix(in srgb, var(--fg) 85%, var(--bg)));
+    --_node-fill:     var(--surface, color-mix(in srgb, var(--fg) 3%, var(--bg)));
+    --_node-stroke:   var(--border, color-mix(in srgb, var(--fg) 20%, var(--bg)));
+    --_group-fill:    var(--bg);
+    --_group-hdr:     color-mix(in srgb, var(--fg) 5%, var(--bg));
+    --_inner-stroke:  color-mix(in srgb, var(--fg) 12%, var(--bg));
+    --_key-badge:     color-mix(in srgb, var(--fg) 10%, var(--bg));
+  }
+</style>
+<defs>
+  <marker id="seq-arrow" markerWidth="8" markerHeight="5" refX="8" refY="2.5" orient="auto-start-reverse">
+    <polygon points="0 0, 8 2.5, 0 5" fill="var(--_arrow)" />
+  </marker>
+  <marker id="seq-arrow-open" markerWidth="8" markerHeight="5" refX="8" refY="2.5" orient="auto-start-reverse">
+    <polyline points="0 0, 8 2.5, 0 5" fill="none" stroke="var(--_arrow)" stroke-width="1" />
+  </marker>
+</defs>
+<line class="lifeline" data-actor="Owner" x1="116.9995" y1="92.45" x2="116.9995" y2="462.45" stroke="var(--_line)" stroke-width="0.75" stroke-dasharray="6 4" />
+<line class="lifeline" data-actor="Delegate" x1="315.808" y1="92.45" x2="315.808" y2="462.45" stroke="var(--_line)" stroke-width="0.75" stroke-dasharray="6 4" />
+<line class="lifeline" data-actor="AttachmentSvc" x1="666.7739999999998" y1="70" x2="666.7739999999998" y2="462.45" stroke="var(--_line)" stroke-width="0.75" stroke-dasharray="6 4" />
+<line class="lifeline" data-actor="LocalAttachMapper" x1="986.8519999999996" y1="70" x2="986.8519999999996" y2="462.45" stroke="var(--_line)" stroke-width="0.75" stroke-dasharray="6 4" />
+<line class="lifeline" data-actor="DB" x1="1369.2999999999995" y1="70" x2="1369.2999999999995" y2="462.45" stroke="var(--_line)" stroke-width="0.75" stroke-dasharray="6 4" />
+<line class="lifeline" data-actor="OutboundSMTP" x1="1571.0724999999995" y1="70" x2="1571.0724999999995" y2="462.45" stroke="var(--_line)" stroke-width="0.75" stroke-dasharray="6 4" />
+<g class="message" data-from="Owner" data-to="AttachmentSvc" data-label="Upload private attachment to Draft on Account 2 (Private)" data-line-style="solid" data-arrow-head="filled" data-self="false" data-step="1">
+  <line x1="116.9995" y1="112.45" x2="666.7739999999998" y2="112.45" stroke="var(--_line)" stroke-width="1" marker-end="url(#seq-arrow)" />
+  <rect x="245.3867499999999" y="94.3" width="293" height="16.3" rx="2" ry="2" fill="var(--bg)" />
+  <text x="391.8867499999999" y="102.45" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">Upload private attachment to Draft on Account 2 (Private)</text>
+  <circle class="sequence-number" cx="116.9995" cy="112.45" r="9" fill="var(--_arrow)" stroke="var(--bg)" stroke-width="1" />
+  <text x="116.9995" y="112.45" class="sequence-number-label" font-size="10" text-anchor="middle" font-weight="600" fill="var(--bg)" dy="3.5">1</text>
+</g>
+<g class="message" data-from="AttachmentSvc" data-to="DB" data-label="INSERT attachment (id=99, local_message_id=101, user_id=&quot;User A&quot;)" data-line-style="solid" data-arrow-head="filled" data-self="false" data-step="2">
+  <line x1="666.7739999999998" y1="152.45" x2="1369.2999999999995" y2="152.45" stroke="var(--_line)" stroke-width="1" marker-end="url(#seq-arrow)" />
+  <rect x="840.5369999999996" y="134.29999999999998" width="355" height="16.3" rx="2" ry="2" fill="var(--bg)" />
+  <text x="1018.0369999999996" y="142.45" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">INSERT attachment (id=99, local_message_id=101, user_id=&quot;User A&quot;)</text>
+  <circle class="sequence-number" cx="666.7739999999998" cy="152.45" r="9" fill="var(--_arrow)" stroke="var(--bg)" stroke-width="1" />
+  <text x="666.7739999999998" y="152.45" class="sequence-number-label" font-size="10" text-anchor="middle" font-weight="600" fill="var(--bg)" dy="3.5">2</text>
+</g>
+<g class="message" data-from="Delegate" data-to="AttachmentSvc" data-label="Send Message on Account 1 with attachments=[{id: 99, type: 'local'}]" data-line-style="solid" data-arrow-head="filled" data-self="false" data-step="3">
+  <line x1="315.808" y1="207.45" x2="666.7739999999998" y2="207.45" stroke="var(--_line)" stroke-width="1" marker-end="url(#seq-arrow)" />
+  <rect x="319.2909999999999" y="189.29999999999998" width="344" height="16.3" rx="2" ry="2" fill="var(--bg)" />
+  <text x="491.2909999999999" y="197.45" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">Send Message on Account 1 with attachments=[{id: 99, type: &#39;local&#39;}]</text>
+  <circle class="sequence-number" cx="315.808" cy="207.45" r="9" fill="var(--_arrow)" stroke="var(--bg)" stroke-width="1" />
+  <text x="315.808" y="207.45" class="sequence-number-label" font-size="10" text-anchor="middle" font-weight="600" fill="var(--bg)" dy="3.5">3</text>
+</g>
+<g class="message" data-from="AttachmentSvc" data-to="LocalAttachMapper" data-label="saveLocalMessageAttachments(&quot;User A&quot;, msgId=202, [99])" data-line-style="solid" data-arrow-head="filled" data-self="false" data-step="4">
+  <line x1="666.7739999999998" y1="247.45" x2="986.8519999999996" y2="247.45" stroke="var(--_line)" stroke-width="1" marker-end="url(#seq-arrow)" />
+  <rect x="671.8129999999996" y="229.29999999999998" width="310" height="16.3" rx="2" ry="2" fill="var(--bg)" />
+  <text x="826.8129999999996" y="237.45" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">saveLocalMessageAttachments(&quot;User A&quot;, msgId=202, [99])</text>
+  <circle class="sequence-number" cx="666.7739999999998" cy="247.45" r="9" fill="var(--_arrow)" stroke="var(--bg)" stroke-width="1" />
+  <text x="666.7739999999998" y="247.45" class="sequence-number-label" font-size="10" text-anchor="middle" font-weight="600" fill="var(--bg)" dy="3.5">4</text>
+</g>
+<g class="message" data-from="LocalAttachMapper" data-to="DB" data-label="UPDATE local_message_id = 202 WHERE user_id = 'User A' AND id = 99" data-line-style="solid" data-arrow-head="filled" data-self="false" data-step="5">
+  <line x1="986.8519999999996" y1="302.45" x2="1369.2999999999995" y2="302.45" stroke="var(--_line)" stroke-width="1" marker-end="url(#seq-arrow)" />
+  <rect x="988.5759999999996" y="284.3" width="379" height="16.3" rx="2" ry="2" fill="var(--bg)" />
+  <text x="1178.0759999999996" y="292.45" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">UPDATE local_message_id = 202 WHERE user_id = &#39;User A&#39; AND id = 99</text>
+  <circle class="sequence-number" cx="986.8519999999996" cy="302.45" r="9" fill="var(--_arrow)" stroke="var(--bg)" stroke-width="1" />
+  <text x="986.8519999999996" y="302.45" class="sequence-number-label" font-size="10" text-anchor="middle" font-weight="600" fill="var(--bg)" dy="3.5">5</text>
+</g>
+<g class="message" data-from="DB" data-to="LocalAttachMapper" data-label="1 row affected (Ownership Reassigned)" data-line-style="dashed" data-arrow-head="filled" data-self="false" data-step="6">
+  <line x1="1369.2999999999995" y1="342.45" x2="986.8519999999996" y2="342.45" stroke="var(--_line)" stroke-width="1" stroke-dasharray="6 4" marker-end="url(#seq-arrow)" />
+  <rect x="1076.0759999999996" y="324.3" width="204" height="16.3" rx="2" ry="2" fill="var(--bg)" />
+  <text x="1178.0759999999996" y="332.45" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">1 row affected (Ownership Reassigned)</text>
+  <circle class="sequence-number" cx="1369.2999999999995" cy="342.45" r="9" fill="var(--_arrow)" stroke="var(--bg)" stroke-width="1" />
+  <text x="1369.2999999999995" y="342.45" class="sequence-number-label" font-size="10" text-anchor="middle" font-weight="600" fill="var(--bg)" dy="3.5">6</text>
+</g>
+<g class="message" data-from="AttachmentSvc" data-to="OutboundSMTP" data-label="Transmit Message 202 with Attachment 99" data-line-style="solid" data-arrow-head="filled" data-self="false" data-step="7">
+  <line x1="666.7739999999998" y1="382.45" x2="1571.0724999999995" y2="382.45" stroke="var(--_line)" stroke-width="1" marker-end="url(#seq-arrow)" />
+  <rect x="1008.4232499999996" y="364.3" width="221" height="16.3" rx="2" ry="2" fill="var(--bg)" />
+  <text x="1118.9232499999996" y="372.45" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">Transmit Message 202 with Attachment 99</text>
+  <circle class="sequence-number" cx="666.7739999999998" cy="382.45" r="9" fill="var(--_arrow)" stroke="var(--bg)" stroke-width="1" />
+  <text x="666.7739999999998" y="382.45" class="sequence-number-label" font-size="10" text-anchor="middle" font-weight="600" fill="var(--bg)" dy="3.5">7</text>
+</g>
+<g class="message" data-from="OutboundSMTP" data-to="Delegate" data-label="Message delivered with Owner's private file" data-line-style="dashed" data-arrow-head="filled" data-self="false" data-step="8">
+  <line x1="1571.0724999999995" y1="422.45" x2="315.808" y2="422.45" stroke="var(--_line)" stroke-width="1" stroke-dasharray="6 4" marker-end="url(#seq-arrow)" />
+  <rect x="828.4402499999998" y="404.3" width="230" height="16.3" rx="2" ry="2" fill="var(--bg)" />
+  <text x="943.4402499999998" y="412.45" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">Message delivered with Owner&#39;s private file</text>
+  <circle class="sequence-number" cx="1571.0724999999995" cy="422.45" r="9" fill="var(--_arrow)" stroke="var(--bg)" stroke-width="1" />
+  <text x="1571.0724999999995" y="422.45" class="sequence-number-label" font-size="10" text-anchor="middle" font-weight="600" fill="var(--bg)" dy="3.5">8</text>
+</g>
+<g class="note" data-position="over" data-actors="Delegate">
+  <polygon points="210.913,160.45 414.703,160.45 420.703,166.45 420.703,183.45 210.913,183.45" fill="var(--bg)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <polygon points="414.703,160.45 420.703,166.45 414.703,166.45" fill="var(--_inner-stroke)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="315.808" y="171.95" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">Delegate has access ONLY to Account 1</text>
+</g>
+<g class="note" data-position="over" data-actors="LocalAttachMapper">
+  <polygon points="742.9609999999997,255.45 1224.7429999999997,255.45 1230.7429999999997,261.45 1230.7429999999997,278.45 742.9609999999997,278.45" fill="var(--bg)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <polygon points="1224.7429999999997,255.45 1230.7429999999997,261.45 1224.7429999999997,261.45" fill="var(--_inner-stroke)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="986.8519999999996" y="266.95" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)"><tspan x="986.8519999999996" dy="-3.3000000000000007">Flawed query: WHERE user_id = &#39;User A&#39; AND id IN (99)</tspan><tspan x="986.8519999999996" dy="14.3">Missing check: local_message_id IS NULL</tspan></text>
+</g>
+<g class="actor" data-id="Owner" data-label="Account Owner (User A)" data-type="actor">
+  <g transform="translate(98.9995,32) scale(1.5)">
+    <path d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" fill="none" stroke="var(--_line)" stroke-width="0.6666666666666666" />
+    <path d="M15 10C15 11.6569 13.6569 13 12 13C10.3431 13 9 11.6569 9 10C9 8.34315 10.3431 7 12 7C13.6569 7 15 8.34315 15 10Z" fill="none" stroke="var(--_line)" stroke-width="0.6666666666666666" />
+    <path d="M5.62842 18.3563C7.08963 17.0398 9.39997 16 12 16C14.6 16 16.9104 17.0398 18.3716 18.3563" fill="none" stroke="var(--_line)" stroke-width="0.6666666666666666" />
+  </g>
+  <text x="116.9995" y="84" font-size="13" text-anchor="middle" font-weight="500" fill="var(--_text)" dy="4.55">Account Owner (User A)</text>
+</g>
+<g class="actor" data-id="Delegate" data-label="Delegatee (User B)" data-type="actor">
+  <g transform="translate(297.808,32) scale(1.5)">
+    <path d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" fill="none" stroke="var(--_line)" stroke-width="0.6666666666666666" />
+    <path d="M15 10C15 11.6569 13.6569 13 12 13C10.3431 13 9 11.6569 9 10C9 8.34315 10.3431 7 12 7C13.6569 7 15 8.34315 15 10Z" fill="none" stroke="var(--_line)" stroke-width="0.6666666666666666" />
+    <path d="M5.62842 18.3563C7.08963 17.0398 9.39997 16 12 16C14.6 16 16.9104 17.0398 18.3716 18.3563" fill="none" stroke="var(--_line)" stroke-width="0.6666666666666666" />
+  </g>
+  <text x="315.808" y="84" font-size="13" text-anchor="middle" font-weight="500" fill="var(--_text)" dy="4.55">Delegatee (User B)</text>
+</g>
+<g class="actor" data-id="AttachmentSvc" data-label="AttachmentService" data-type="participant">
+  <rect x="594.2239999999998" y="30" width="145.1" height="40" rx="4" ry="4" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="666.7739999999998" y="50" font-size="13" text-anchor="middle" font-weight="500" fill="var(--_text)" dy="4.55">AttachmentService</text>
+</g>
+<g class="actor" data-id="LocalAttachMapper" data-label="LocalAttachmentMapper" data-type="participant">
+  <rect x="897.6294999999997" y="30" width="178.44500000000002" height="40" rx="4" ry="4" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="986.8519999999996" y="50" font-size="13" text-anchor="middle" font-weight="500" fill="var(--_text)" dy="4.55">LocalAttachmentMapper</text>
+</g>
+<g class="actor" data-id="DB" data-label="Database (mail_attachments)" data-type="participant">
+  <rect x="1269.7034999999996" y="30" width="199.19299999999996" height="40" rx="4" ry="4" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="1369.2999999999995" y="50" font-size="13" text-anchor="middle" font-weight="500" fill="var(--_text)" dy="4.55">Database (mail_attachments)</text>
+</g>
+<g class="actor" data-id="OutboundSMTP" data-label="SMTP Gateway" data-type="participant">
+  <rect x="1508.8964999999996" y="30" width="124.35199999999999" height="40" rx="4" ry="4" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="1571.0724999999995" y="50" font-size="13" text-anchor="middle" font-weight="500" fill="var(--_text)" dy="4.55">SMTP Gateway</text>
+</g>
+</svg>

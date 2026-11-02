@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1060 420" width="1060" height="420" style="background:#FFFFFF; font-family:'Times New Roman', Times, serif;">
+  <defs>
+    <marker id="assoc-arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#1E293B" />
+    </marker>
+    <marker id="sasi-arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#15803D" />
+    </marker>
+  </defs>
+
+  <!-- Title Banner -->
+  <rect x="20" y="12" width="1020" height="34" fill="#F1F5F9" stroke="#94A3B8" stroke-width="1" rx="4"/>
+  <text x="530" y="34" text-anchor="middle" font-size="15" font-weight="bold" fill="#0F172A">
+    Entity Architecture &amp; Strict Account Scoping Invariant (SASI) Boundaries
+  </text>
+
+  <!-- Row 1: Core Account & Mailbox Entities -->
+  
+  <!-- Entity 1: OcUser -->
+  <rect x="20" y="60" width="220" height="135" fill="#F8FAFC" stroke="#475569" stroke-width="1.5" rx="4"/>
+  <rect x="20" y="60" width="220" height="26" fill="#E2E8F0" stroke="#475569" stroke-width="1.5" rx="4"/>
+  <text x="130" y="78" text-anchor="middle" font-size="12" font-weight="bold" fill="#0F172A">User (Nextcloud Core)</text>
+  <text x="32" y="102" font-size="10.5" fill="#1E293B">+ uid: String [PK]</text>
+  <text x="32" y="120" font-size="10.5" fill="#1E293B">+ displayName: String</text>
+  <text x="32" y="138" font-size="10.5" fill="#1E293B">+ email: String</text>
+  <text x="32" y="160" font-size="9.5" font-style="italic" fill="#64748B">Authenticated session user ($userId)</text>
+
+  <!-- Entity 2: MailAccount -->
+  <rect x="320" y="60" width="340" height="135" fill="#F8FAFC" stroke="#0284C7" stroke-width="1.5" rx="4"/>
+  <rect x="320" y="60" width="340" height="26" fill="#E0F2FE" stroke="#0284C7" stroke-width="1.5" rx="4"/>
+  <text x="490" y="78" text-anchor="middle" font-size="12" font-weight="bold" fill="#0369A1">MailAccount (OCAMailDb)</text>
+  <text x="332" y="100" font-size="10.5" fill="#1E293B">+ id: int [PK]</text>
+  <text x="332" y="117" font-size="10.5" fill="#1E293B">+ userId: String [FK -> User.uid]</text>
+  <text x="332" y="134" font-size="10.5" fill="#1E293B">+ inboundHost: String, inboundUser: String</text>
+  <text x="332" y="151" font-size="10.5" fill="#1E293B">+ inboundPassword: String [Encrypted AES-256]</text>
+  <text x="332" y="168" font-size="10" font-weight="bold" fill="#0369A1">+ provisioningId: ?int, sieveHost: ?String</text>
+
+  <!-- Entity 3: Mailbox -->
+  <rect x="740" y="60" width="300" height="135" fill="#F8FAFC" stroke="#475569" stroke-width="1.5" rx="4"/>
+  <rect x="740" y="60" width="300" height="26" fill="#E2E8F0" stroke="#475569" stroke-width="1.5" rx="4"/>
+  <text x="890" y="78" text-anchor="middle" font-size="12" font-weight="bold" fill="#0F172A">Mailbox</text>
+  <text x="752" y="102" font-size="10.5" fill="#1E293B">+ id: int [PK]</text>
+  <text x="752" y="120" font-size="10.5" fill="#1E293B">+ accountId: int [FK -> MailAccount.id]</text>
+  <text x="752" y="138" font-size="10.5" fill="#1E293B">+ name: String, syncToken: ?String</text>
+  <text x="752" y="158" font-size="9.5" font-style="italic" fill="#64748B">Scoped to accountId, NOT global userId</text>
+
+  <!-- Row 2: Delegation, Drafts & Attachments -->
+
+  <!-- Entity 4: MailDelegation -->
+  <rect x="20" y="240" width="220" height="145" fill="#F8FAFC" stroke="#9333EA" stroke-width="1.5" rx="4"/>
+  <rect x="20" y="240" width="220" height="26" fill="#F3E8FF" stroke="#9333EA" stroke-width="1.5" rx="4"/>
+  <text x="130" y="258" text-anchor="middle" font-size="12" font-weight="bold" fill="#7E22CE">MailDelegation</text>
+  <text x="32" y="280" font-size="10.5" fill="#1E293B">+ id: int [PK]</text>
+  <text x="32" y="298" font-size="10.5" fill="#1E293B">+ accountId: int [FK]</text>
+  <text x="32" y="316" font-size="10.5" fill="#1E293B">+ delegateUserId: String</text>
+  <rect x="28" y="330" width="204" height="45" fill="#FEF2F2" stroke="#EF4444" rx="2"/>
+  <text x="34" y="344" font-size="9" font-weight="bold" fill="#991B1B">SASI Scope Enforcement:</text>
+  <text x="34" y="358" font-size="8.5" fill="#991B1B">Grants accountId access ONLY.</text>
+  <text x="34" y="370" font-size="8.5" fill="#991B1B">Never other accounts of $U_{owner}$</text>
+
+  <!-- Entity 5: LocalMessage (Draft) -->
+  <rect x="320" y="240" width="340" height="145" fill="#F8FAFC" stroke="#475569" stroke-width="1.5" rx="4"/>
+  <rect x="320" y="240" width="340" height="26" fill="#E2E8F0" stroke="#475569" stroke-width="1.5" rx="4"/>
+  <text x="490" y="258" text-anchor="middle" font-size="12" font-weight="bold" fill="#0F172A">LocalMessage (Outbound Draft)</text>
+  <text x="332" y="280" font-size="10.5" fill="#1E293B">+ id: int [PK]</text>
+  <text x="332" y="298" font-size="10.5" fill="#1E293B">+ accountId: int [FK -> MailAccount.id]</text>
+  <text x="332" y="316" font-size="10.5" fill="#1E293B">+ mailboxId: int, subject: String</text>
+  <rect x="328" y="330" width="324" height="45" fill="#F0FDF4" stroke="#22C55E" rx="2"/>
+  <text x="334" y="344" font-size="9" font-weight="bold" fill="#166534">SASI Draft Invariant:</text>
+  <text x="334" y="358" font-size="8.5" fill="#166534">Drafts and outbound messages are keyed on accountId;</text>
+  <text x="334" y="370" font-size="8.5" fill="#166534">delegate operations execute in account sandbox.</text>
+
+  <!-- Entity 6: LocalAttachment -->
+  <rect x="740" y="240" width="300" height="145" fill="#F8FAFC" stroke="#16A34A" stroke-width="1.5" rx="4"/>
+  <rect x="740" y="240" width="300" height="26" fill="#DCFCE7" stroke="#16A34A" stroke-width="1.5" rx="4"/>
+  <text x="890" y="258" text-anchor="middle" font-size="12" font-weight="bold" fill="#15803D">LocalAttachment (Fixed SASI)</text>
+  <text x="752" y="280" font-size="10.5" fill="#1E293B">+ id: int [PK]</text>
+  <text x="752" y="298" font-size="10.5" fill="#1E293B">+ localMessageId: ?int [FK -> LocalMessage.id]</text>
+  <text x="752" y="316" font-size="10.5" fill="#1E293B">+ userId: String, fileName: String</text>
+  <rect x="748" y="330" width="284" height="45" fill="#F0FDF4" stroke="#16A34A" rx="2"/>
+  <text x="754" y="344" font-size="9" font-weight="bold" fill="#15803D">Fixed Rebinding Constraint (VULN-02):</text>
+  <text x="754" y="358" font-size="8.5" fill="#15803D">WHERE (local_message_id IS NULL OR = :id)</text>
+  <text x="754" y="370" font-size="8.5" fill="#15803D">Prevents stealing attachments from other drafts.</text>
+
+  <!-- Relationship Arrows -->
+  <line x1="240" y1="125" x2="320" y2="125" stroke="#1E293B" stroke-width="1.5" marker-end="url(#assoc-arrow)"/>
+  <text x="280" y="117" text-anchor="middle" font-size="10" fill="#475569">1 : N</text>
+
+  <line x1="660" y1="125" x2="740" y2="125" stroke="#1E293B" stroke-width="1.5" marker-end="url(#assoc-arrow)"/>
+  <text x="700" y="117" text-anchor="middle" font-size="10" fill="#475569">1 : N</text>
+
+  <line x1="130" y1="240" x2="130" y2="195" stroke="#7E22CE" stroke-width="1.5" marker-end="url(#assoc-arrow)"/>
+  <text x="145" y="222" font-size="9.5" fill="#7E22CE">delegates</text>
+
+  <line x1="490" y1="195" x2="490" y2="240" stroke="#1E293B" stroke-width="1.5" marker-end="url(#assoc-arrow)"/>
+  <text x="505" y="222" font-size="10" fill="#475569">1 : N</text>
+
+  <line x1="660" y1="310" x2="740" y2="310" stroke="#15803D" stroke-width="2" marker-end="url(#sasi-arrow)"/>
+  <text x="700" y="302" text-anchor="middle" font-size="10" font-weight="bold" fill="#15803D">SASI</text>
+</svg>

